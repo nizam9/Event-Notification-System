@@ -1,0 +1,30 @@
+.section {
+    padding: 25px 0 0 50px;
+}
+
+.title {
+    font-size: 14px;
+    font-weight: 500;
+    padding-top: 8px;
+    color: var(--border);
+}
+
+.full__screen {
+    width: 100%;
+    height: calc(100vh - 61px);
+    background: whitesmoke;
+}
+
+.footer {
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+label {
+    color: var(--lightblack);
+}
+
+.field {
+    padding: 10px 0 0 0;
+}

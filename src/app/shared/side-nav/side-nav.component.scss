@@ -1,0 +1,21 @@
+.nav ul {
+    list-style-type: none;
+    padding-top: 15px;
+}
+
+.nav ul li {
+    line-height: 2.5em;
+}
+
+.nav ul li:hover {
+    cursor: pointer;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: var(--lightblack);
+}
+
+.nav ul li a.active {
+    color: var(--blue);
+}

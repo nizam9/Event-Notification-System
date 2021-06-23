@@ -1,0 +1,21 @@
+.header {
+    height: 60px;
+    border-bottom: 1px solid #ced4da;
+}
+
+.side__nav {
+    width: 15%;
+    border-right: 1px solid #ced4da;
+    height: calc(100vh - 61px);
+    overflow: auto;
+}
+
+.main__section {
+    width: 100%;
+    height: calc(100vh - 61px);
+    overflow: auto;
+}
+
+.body__section {
+    display: flex;
+}

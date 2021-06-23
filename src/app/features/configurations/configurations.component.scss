@@ -1,0 +1,26 @@
+.label {
+    font-size: 14px;
+}
+
+.row {
+    padding: 15px;
+}
+
+.configure {
+    position: relative;
+    top: 20px;
+}
+
+.title {
+    font-weight: 600;
+    font-size: 25px;
+    color: var(--blue);
+    font-family: unset;
+    display: flex;
+    justify-content: center;
+}
+
+.email_switch {
+    margin-left: 10px;
+    margin-top: 8px;
+}

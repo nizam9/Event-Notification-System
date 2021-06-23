@@ -1,0 +1,117 @@
+<form autocomplete="off" [formGroup]="configForm" (ngSubmit)="saveConfiguration()" novalidate>
+    <div class=" row">
+        <div class="col-md-3">
+            <div class="label">Organization</div>
+            <p-autoComplete class="form-control-sm" formControlName="organizationName" [suggestions]="filteredCountries" (completeMethod)="filterCountry($event)" field="name" [dropdown]="true">
+                <ng-template let-country pTemplate="item">
+                    <div class="country-item">
+                        <div>{{country.name}}</div>
+                    </div>
+                </ng-template>
+            </p-autoComplete>
+            <div *ngIf="configFormField.organizationName" class="alerterror">
+                <span class="alert-error">{{configFormField.organizationName}}</span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="label">Event</div>
+            <p-autoComplete class="form-control-sm" formControlName="eventName" [suggestions]="filteredCountries" (completeMethod)="filterCountry($event)" field="name" [dropdown]="true">
+                <ng-template let-country pTemplate="item">
+                    <div class="country-item">
+                        <div>{{country.name}}</div>
+                    </div>
+                </ng-template>
+            </p-autoComplete>
+            <div *ngIf="configFormField.eventName" class="alerterror">
+                <span class="alert-error">{{configFormField.eventName}}</span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="label">label</div>
+            <p-autoComplete class="form-control-sm" formControlName="labelName" [suggestions]="filteredCountries" (completeMethod)="filterCountry($event)" field="name" [dropdown]="true">
+                <ng-template let-country pTemplate="item">
+                    <div class="country-item">
+                        <div>{{country.name}}</div>
+                    </div>
+                </ng-template>
+            </p-autoComplete>
+            <div *ngIf="configFormField.labelName" class="alerterror">
+                <span class="alert-error">{{configFormField.labelName}}</span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <button type="submit" class="btn btn-primary btn-sm configure">Save Configuration</button>
+        </div>
+    </div>
+
+    <div class="configurations">
+        <div class="row">
+            <div class="col-md-6 section">
+                <div class="title">
+                    Email
+                    <span class="form-check form-switch email_switch">
+                        <input class="form-check-input" type="checkbox" formControlName="emailCheck" (ngModelChange)="onEmailChange($event)">
+                    </span>
+                </div>
+                <div class="row">
+                    <div class="input-group input-group-sm mb-3 col-md-6">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">TO</span>
+                        <input [ngStyle]="{'border': configFormField.emailTO ? '1px solid red' : ''}" formControlName="emailTO" type="text" class="form-control" pInputText pTooltip="Enter email address seperated by comma" tooltipEvent="focus">
+                        <span *ngIf="configFormField.emailTO" class="alerterror">
+                            <span class="alert-error">{{configFormField.emailTO}}</span>
+                        </span>
+                    </div>
+
+                    <div class="input-group input-group-sm mb-3 col-md-6">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">CC</span>
+                        <input [ngStyle]="{'border': configFormField.emailCC ? '1px solid red' : ''}" formControlName="emailCC" type="text" class="form-control" pInputText pTooltip="Enter email address seperated by comma" tooltipEvent="focus">
+                        <span *ngIf="configFormField.emailCC" class="alerterror">
+                            <span class="alert-error">{{configFormField.emailCC}}</span>
+                        </span>
+                    </div>
+
+                    <div class="input-group input-group-sm mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Subject</span>
+                        <input [ngStyle]="{'border': configFormField.EmailSubject ? '1px solid red' : ''}" formControlName="EmailSubject" type="text" class="form-control">
+                        <span *ngIf="configFormField.EmailSubject" class="alerterror">
+                            <span class="alert-error">{{configFormField.EmailSubject}}</span>
+                        </span>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-text">Body</span>
+                        <textarea [ngStyle]="{'border': configFormField.emailBody ? '1px solid red' : ''}" formControlName="emailBody" class="form-control" rows="10"></textarea>
+                        <span *ngIf="configFormField.emailBody" class="alerterror">
+                            <span class="alert-error">{{configFormField.emailBody}}</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 section">
+                <div class="title">
+                    SMS
+                    <span class="form-check form-switch email_switch">
+                        <input class="form-check-input" type="checkbox" formControlName="smsCheck" (ngModelChange)="onSmsChange($event)">
+                    </span>
+                </div>
+
+                <div class="row">
+                    <div class="input-group input-group-sm mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">TO</span>
+                        <input [ngStyle]="{'border': configFormField.smsTO ? '1px solid red' : ''}" formControlName="smsTO" type="text" class="form-control" pInputText pTooltip="Enter mobile number seperated by Comma" tooltipEvent="focus">
+                        <span *ngIf="configFormField.smsTO" class="alerterror">
+                            <span class="alert-error">{{configFormField.smsTO}}</span>
+                        </span>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-text">Body</span>
+                        <textarea [ngStyle]="{'border': configFormField.smsBody ? '1px solid red' : ''}" formControlName="smsBody" class="form-control" rows="14"></textarea>
+                        <span *ngIf="configFormField.smsBody" class="alerterror">
+                            <span class="alert-error">{{configFormField.smsBody}}</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</form>

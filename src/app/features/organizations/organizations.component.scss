@@ -1,0 +1,43 @@
+.hint__text {
+    margin-top: 30px;
+}
+
+.hint__text span {
+    margin-left: 20px;
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+.footer {
+    float: right;
+    position: relative;
+    top: 20px;
+    margin-bottom: 40px;
+}
+
+.footer span {
+    font-size: 14px;
+    color: var(--blue);
+    text-decoration: underline;
+    cursor: pointer;
+    padding-right: 15px;
+}
+
+.modal-dialog {
+    width: 400px;
+}
+
+.more__details {
+    float: right;
+    cursor: pointer;
+}
+
+.more__details:hover {
+    color: var(--blue);
+}
+
+.my_class {
+    border: 1ps solid red;
+}
